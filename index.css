@@ -11,7 +11,7 @@ body {
 
 /* General styling for navbar */
 .navbar {
-    background: rgba(255, 247, 1, 0.526); /* Black with transparency */
+    background: rgba(204, 201, 2, 0.59); /* Black with transparency */
     backdrop-filter: blur(10px); /* Blur effect */
     color: white;
     padding: 20px 20px; /* Increased padding for more height */
@@ -119,7 +119,7 @@ body {
         height: 3px;
         background-color: white;
         position: absolute;
-        left: 0;
+        left: 1%;
     }
 
     .navbar-toggler-icon::before {
@@ -133,7 +133,7 @@ body {
 
 @media (max-width: 768px) {
     .navbar-menu {
-        top: 60px; /* Adjust if needed for smaller screens */
+        top: 20px; /* Adjust if needed for smaller screens */
     }
 }
 
@@ -627,6 +627,151 @@ background-color: rgba(9, 3, 3, 0.76);
     }
 }
 /* Additional styles for highlighted name */
+/* Main name section */
+.main-name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin: 80px 20px 20px 20px; /* Adjust top margin for navbar overlap */
+    background-color: #a9a9a92e;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+/* Name section layout */
+.name-section {
+    display: flex;
+    color: rgb(238, 237, 236);
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 20px;
+    margin: 0% 2% 5% 1%; /* Increased top margin for navbar overlap */
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+/* Profile image styling */
+.profile-image {
+    flex: 1;
+    display: flex;
+    justify-content: center; /* Center the image */
+    align-items: center; /* Center the image vertically */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.profile-image img {
+    border-radius: 50%;
+    box-shadow: 0 0 50px gold;
+    border: 5px solid white;
+    max-width: 400px; /* Increased maximum width for larger screens */
+    height: auto;
+    width: 100%; /* Ensure responsiveness */
+    transition: transform 0.3s ease-in-out; /* Add transition for image zoom effect */
+}
+
+/* Name details styling */
+.name-details {
+    flex: 1;
+    text-align: left; /* Align text to the left */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center vertically */
+    align-items: flex-start; /* Align text to the left */
+    margin-left: 40px; /* Increase left margin */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Styling for headings and paragraphs in name details */
+.name-details h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    transition: color 0.3s ease; /* Add transition for text color change */
+}
+
+.name-details p {
+    font-size: 1.2em;
+    margin: 10px 0;
+    transition: opacity 0.3s ease; /* Add transition for opacity change */
+}
+
+/* Hover effects for profile image */
+.profile-image img:hover {
+    transform: scale(1.05); /* Zoom effect on hover */
+}
+
+/* Hover effects for name details */
+.name-details h1:hover {
+    color: #ffcc00; /* Change color on hover */
+}
+
+.name-details p:hover {
+    opacity: 0.8; /* Slight fade on hover */
+}
+
+/* Responsive styling */
+@media (max-width: 992px) {
+    .main-name {
+        flex-direction: column;
+        align-items: center;
+        margin: 60px 20px 20px 20px; /* Adjust top margin */
+    }
+
+    .name-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-image, .name-details {
+        width: 100%;
+        padding: 10px;
+        margin: 0; /* Remove side margins on smaller screens */
+    }
+
+    .profile-image img {
+        max-width: 350px; /* Adjust max-width for smaller screens */
+    }
+
+    .name-details {
+        margin-left: 0; /* Remove left margin for smaller screens */
+    }
+
+    .name-details h1 {
+        font-size: 2em;
+    }
+
+    .name-details p {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 576px) {
+    .main-name {
+        padding: 10px;
+        margin: 40px 10px 10px 10px; /* Further adjust top margin */
+    }
+
+    .profile-image img {
+        max-width: 250px; /* Adjust max-width for even smaller screens */
+    }
+
+    .name-details {
+        margin-left: 0; /* Remove left margin for smaller screens */
+    }
+
+    .name-details h1 {
+        font-size: 1.8em;
+    }
+
+    .name-details p {
+        font-size: 0.9em;
+    }
+}
+
 /* Additional styles for highlighted name */
 .name-highlight {
     color: #ffcc00; /* Gold color for the name */
@@ -732,7 +877,7 @@ background-color: rgba(9, 3, 3, 0.76);
 
 .skills-section {
     padding: 40px 20px;
-   background-color: #000;
+   background-color: #b8b3b32b;
      color: rgb(255, 255, 255);
 }
 
@@ -763,10 +908,13 @@ background-color: rgba(9, 3, 3, 0.76);
     flex-wrap: wrap;
     gap: 20px;
 }
-
+.skill-card:hover{
+    background-color: gold;
+    transition: 1s;
+}
 .skill-card {
     flex: 1 1 calc(25% - 20px); /* Four cards per row with gaps */
-    background-color: #89878780;
+    background-color: #00000080;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
@@ -815,8 +963,8 @@ background-color: rgba(9, 3, 3, 0.76);
 /*------------------------------ project --------------------------------->*/
 
 .projects-section {
+   background-color: #000;
     padding: 40px 20px;
-   background: linear-gradient(to bottom right, yellow, black, black, #000000 60%, #000000 39%, black, yellow);
 }
 
 .projects-container {
@@ -975,7 +1123,7 @@ background-color: rgba(9, 3, 3, 0.76);
 /*      -------------------------        EDUCATION----------------------- */
 .education-section {
     padding: 40px 20px;
- background-color: black;
+ background-color: rgba(140, 133, 133, 0.207);
 }
 
 .education-container {
@@ -1117,8 +1265,7 @@ background-color: rgba(9, 3, 3, 0.76);
     align-items: center;
     height: 100%;
     padding: 40px 20px;
-    background: linear-gradient(to bottom right, yellow, black, black, #000000 60%, #000000 39%, black, yellow); /* Subtle yellow in top left and bottom right */
-    background-size: cover;
+background-color: #000;    background-size: cover;
 }
 
 .contact-container {
@@ -1178,7 +1325,7 @@ background-color: rgba(9, 3, 3, 0.76);
 .info-item .logo-placeholder {
     width: 30px;
     height: 30px;
-    background-color: #555; /* Placeholder color */
+    font-size: 200%;
     border-radius: 5px;
 }
 
@@ -1188,7 +1335,7 @@ background-color: rgba(9, 3, 3, 0.76);
 
 .social-media h3 {
     margin-bottom: 10px;
-    color: #ffcc00; /* Golden color for headings */
+    color: #fdfdfd; /* Golden color for headings */
 }
 
 .social-icons {
@@ -1199,7 +1346,7 @@ background-color: rgba(9, 3, 3, 0.76);
 .social-icon {
     width: 40px;
     height: 40px;
-    background-color: #555; /* Placeholder color */
+   
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -1208,31 +1355,38 @@ background-color: rgba(9, 3, 3, 0.76);
 }
 
 .social-icon.linkedin {
-    background-color: #0077b5; /* LinkedIn color */
+color: #0077b5; /* LinkedIn color */
+font-size: 320%;
 }
 
 .social-icon.github {
-    background-color: #333; /* GitHub color */
+    color: #ffffff;
+    font-size: 320%;
 }
 
 .social-icon.gmail {
-    background-color: #d14836; /* Gmail color */
+    color: rgb(198, 67, 7);
+    font-size: 320%;
 }
 
 .social-icon.instagram {
-    background-color: #e4405f; /* Instagram color */
+color: rgb(255, 255, 255);
+font-size: 320%;
 }
 
 .social-icon.facebook {
-    background-color: #1877f2; /* Facebook color */
+   
+    font-size: 320%;
 }
 
 .social-icon.telegram {
-    background-color: #0088cc; /* Telegram color */
+    color:rgb(29, 192, 247);
+    font-size: 320%;
 }
 
 .social-icon.whatsapp {
-    background-color: #25D366; /* WhatsApp color */
+ color: #00ff2f; /* WhatsApp color */
+    font-size: 320%;
 }
 
 .social-icon::before {
@@ -1346,7 +1500,7 @@ background-color: rgba(9, 3, 3, 0.76);
 
 
 .footer {
-    background-color: #000; /* Black background for the footer */
+    background-color: #77757571; /* Black background for the footer */
     color: white; /* White text color */
     padding: 40px 20px;
     text-align: center;
