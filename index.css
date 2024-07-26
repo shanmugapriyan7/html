@@ -1,91 +1,143 @@
 body {
     z-index: -1;
         font-family: Arial, sans-serif;
-      background-color: black;
-    color: white;
+      background-color: rgba(0, 0, 0, 0.759);
+ 
     background-repeat: no-repeat;
     background-attachment: fixed;
     }
-    header {
-        position: fixed;
-        top: 0;
-        left: 0;
+  
+    
+
+/* General styling for navbar */
+.navbar {
+    background: rgba(0, 0, 0, 0.6); /* Black with transparency */
+    backdrop-filter: blur(10px); /* Blur effect */
+    color: white;
+    padding: 20px 20px; /* Increased padding for more height */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensure navbar is above other content */
+    transition: background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.5); /* Box shadow for navbar */
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px; /* Max width for navbar content */
+    margin: 0 auto;
+    flex-wrap: wrap; /* Allow items to wrap onto multiple lines */
+}
+
+.navbar-brand {
+    color: #ffcc00; /* Golden color for brand */
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.navbar-menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-menu li {
+    margin: 0;
+}
+
+.navbar-menu a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 15px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar-menu a:hover {
+    background-color: #333; /* Darker background on hover */
+    border-radius: 5px;
+    color: yellow;
+}
+
+.navbar-toggle {
+    display: none; /* Hide toggle button by default */
+    background-color: #333; /* Background color for the toggle button */
+    padding: 10px; /* Increase padding for better appearance */
+    border-radius: 5px; /* Rounded corners for the toggle button */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Box shadow for the toggle button */
+}
+
+/* Responsive styling */
+@media (max-width: 1200px) {
+    .navbar-container {
+        padding: 20px; /* Adjust padding for smaller screens */
+    }
+}
+
+@media (max-width: 992px) {
+    .navbar-menu {
+        display: none; /* Hide menu by default on small screens */
+        flex-direction: column;
         width: 100%;
-        
-        background: #000000;
-        color: #fff;
-        justify-content: space-between;
+        background-color: rgba(0, 0, 0, 0.8); /* Black with transparency for mobile menu */
+        position: absolute;
+        top: 70px; /* Adjust based on navbar height */
+        left: 0;
         z-index: 1000;
+        gap: 0; /* No gap between menu items */
     }
-    
-    header .container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+
+    .navbar-menu.active {
+        display: flex; /* Show menu when active */
     }
-    
-    header h1 {
-        margin: 10px; 
-        color: white;
+
+    .navbar-toggle {
+        display: block; /* Show toggle button on smaller screens */
+        cursor: pointer;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Box shadow for the toggle button */
     }
-    
-    header nav ul {
-        list-style: none;
-        margin: 20px;
-        padding: 0;
-        display: flex;
+
+    .navbar-toggler-icon {
+        width: 30px;
+        height: 3px;
+        background-color: white;
+        position: relative;
+        margin: 6px 0;
     }
-    
-    header nav ul li {
-        margin-left: 16px;
+
+    .navbar-toggler-icon::before,
+    .navbar-toggler-icon::after {
+        content: '';
+        display: block;
+        width: 30px;
+        height: 3px;
+        background-color: white;
+        position: absolute;
+        left: 0;
     }
-    
-    header nav ul li a {
-        color: #fff;
-        text-decoration: none;
+
+    .navbar-toggler-icon::before {
+        top: -8px;
     }
-    header nav ul li a:hover{
-    color: rgb(194, 194, 18);
+
+    .navbar-toggler-icon::after {
+        top: 8px;
     }
-    
-    
-    section.container {
-        padding: 32px 16px;
-        max-width: 800px;
-        margin: 80px auto 0 auto; /* Adjust margin-top to prevent content from being hidden behind the fixed header */
+}
+
+@media (max-width: 768px) {
+    .navbar-menu {
+        top: 60px; /* Adjust if needed for smaller screens */
     }
-    
-    h2 {
-        border-bottom: 2px solid #333;
-        padding-bottom: 8px;
-        margin-bottom: 16px;
-    }
-    
-    ul {
-        list-style: none;
-        padding: 0;
-    }
-    
-    ul li {
-        margin-bottom: 10px;
-    }
-    
-    .project {
-        margin-bottom: 32px;
-    }
-    
-    footer {
-        background: #333;
-        color: #fff;
-        text-align: center;
-        padding: 16px 0;
-    }
-    
-    footer p {
-        margin: 0;
-    }
-    
-    
+}
+
+
     
     
     
@@ -107,16 +159,107 @@ body {
     
     
     
-    
-            .about{
-                height: fit-content;
-                width: 100%;
-                position: relative;
-              
-            }
-            .about h1{
-                margin-left: 7%;
-            }
+    .about-section {
+    padding: 40px 20px;
+background-color: rgba(9, 3, 3, 0.76);
+    }
+
+.about-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px; /* Space between the two sections */
+}
+
+.about-image {
+    width: 40%;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow for the image */
+}
+
+.about-description {
+    width: 60%;
+    background-color: #ffffff00; /* White background for description */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow for the description */
+}
+
+.about-description h2 {
+    text-align: center; /* Center the heading text */
+    color: #ffcc00; /* Golden color for the heading */
+    margin-bottom: 20px; /* Space below the heading */
+    position: relative; /* Position relative for pseudo-elements */
+    font-size: 2rem; /* Larger font size for emphasis */
+}
+
+.about-description h2::before, 
+.about-description h2::after {
+    content: '';
+    position: absolute;
+    width: 30%;
+    height: 2px;
+    background-color: #ebeb00; /* White color for lines */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.about-description h2::before {
+    left: 0;
+}
+
+.about-description h2::after {
+    right: 0;
+}
+
+.about-description p {
+    margin: 0 0 20px; /* Add space below each paragraph */
+    color: #ffffff; /* Dark text color for description */
+    line-height: 1.6;
+}
+
+.contact-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ffcc00; /* Yellow background for the button */
+    color: #fff; /* White text color */
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.contact-button:hover {
+    background-color: #e6b800; /* Darker yellow on hover */
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column; /* Stack image and description vertically */
+    }
+
+    .about-image, .about-description {
+        width: 100%; /* Full width for both sections */
+    }
+
+    .about-image img {
+        width: 100%;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow for the image */
+    }
+}
+
+
+
+            /*
             .skills {
                 width: 100%;
                 display: flex;
@@ -148,7 +291,7 @@ body {
             
             .skill1 {
                 display: grid;
-                grid-template-columns: repeat(5, 1fr); /* 5 columns for larger screens */
+                grid-template-columns: repeat(5, 1fr);
                 gap: 20px;
                 width: 100%;
                 max-width: 1200px;
@@ -163,7 +306,7 @@ body {
                 width: 100%;
                 border-radius: 10px;
                 background-color: rgb(38, 40, 40);
-                padding: 10px; /* Adjust padding to decrease card size */
+                padding: 10px;
                 box-sizing: border-box;
                 text-align: center;
                 display: flex;
@@ -173,18 +316,18 @@ body {
             }
             
             .skillimage {
-                max-width: 70%; /* Adjust image size to fit within the card */
+                max-width: 70%;
                 height: auto;
                 margin-bottom: 10px;
             }
             .skillbox h3 {
-                font-size: 1em; /* Base font size */
+                font-size: 1em;
             }
             
-            /* Media queries for responsiveness */
+           
             @media (max-width: 1200px) {
                 .skill1 {
-                    grid-template-columns: repeat(5, 1fr); /* Keep 5 columns */
+                    grid-template-columns: repeat(5, 1fr);
                     max-width: 1000px;
                     padding: 0 15px;
                 }
@@ -192,7 +335,7 @@ body {
             
             @media (max-width: 992px) {
                 .skill1 {
-                    grid-template-columns: repeat(5, 1fr); /* Keep 5 columns */
+                    grid-template-columns: repeat(5, 1fr); /
                     max-width: 800px;
                     padding: 0 10px;
                 }
@@ -200,7 +343,7 @@ body {
             
             @media (max-width: 768px) {
                 .skill1 {
-                    grid-template-columns: repeat(5, 1fr); /* Keep 5 columns */
+                    grid-template-columns: repeat(5, 1fr); 
                     max-width: 600px;
                     padding: 0 5px;
                 }
@@ -208,18 +351,17 @@ body {
             
             @media (max-width: 576px) {
                 .skill1 {
-                    grid-template-columns: repeat(5, 1fr); /* Keep 5 columns */
+                    grid-template-columns: repeat(5, 1fr); 
                     max-width: 100%;
                     padding: 0;
                 }
             
                 .skillbox {
-                    padding: 5px; /* Further decrease padding to reduce card size */
+                    padding: 5px; 
                 }
             
                 .skillimage {
-                    max-width: 50%; /* Adjust image size for very small screens */
-                }
+                    max-width: 50%; 
             }
             .skillbox:hover{
           background-color: rgba(252, 239, 0, 0.714);
@@ -233,6 +375,9 @@ body {
                 margin-top: 0px;
                 position: relative;
             }
+
+
+            */
             .certificates{
                 display: grid;
                 transition: 2s;
@@ -338,3 +483,715 @@ body {
             }
                 
             }
+
+
+
+
+
+
+
+
+
+
+
+
+
+            /*--------------------------------skills-------------------------*/
+
+
+
+.skills-section {
+    padding: 40px 20px;
+   background-color: #000;
+     color: rgb(255, 255, 255);
+}
+
+.skills-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Space between the two sections */
+}
+
+.skills-logos {
+    width: 60%;
+    
+}
+.skills-logos h2 {
+   color: gold;
+   text-align: center; 
+    
+}
+
+.skills-progress {
+    width: 40%;
+}
+
+.skills-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.skill-card {
+    flex: 1 1 calc(25% - 20px); /* Four cards per row with gaps */
+    background-color: #89878780;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    box-sizing: border-box; /* Ensure padding is included in width */
+}
+
+.skill-card img {
+    max-width: 100px; /* Adjust size of skill logos */
+    margin-bottom: 10px;
+}
+
+.skill-card p {
+    margin: 0;
+}
+
+.skills-progress h2 {
+    margin-bottom: 20px;
+    color: #ffcc00; /* Golden color for headings */
+    text-align: center; 
+}
+
+.progress-bar {
+    background-color: #ddd;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    height: 20px;
+    width: 100%;
+    position: relative;
+}
+
+.progress {
+    background-color: #ffcc00; /* Yellow color for progress */
+    height: 100%;
+    color: #fff;
+    text-align: center;
+    line-height: 20px;
+    border-radius: 5px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+
+            
+/*------------------------------ project --------------------------------->*/
+
+.projects-section {
+    padding: 40px 20px;
+   background: linear-gradient(to bottom right, yellow, black, black, #000000 60%, #000000 39%, black, yellow);
+}
+
+.projects-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.project-item {
+    display: flex;
+    flex-direction: row; /* Align items side by side */
+    margin: 40px auto; /* Increased margin to add space between project items */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow for the project item */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+    width: 90%; /* Increased width of the card */
+    max-width: 1000px; /* Increased maximum width */
+}
+
+@media (max-width: 768px) {
+    .project-item {
+        flex-direction: column; /* Stack image and description vertically */
+        margin: 30px auto; /* Adjust margin for smaller screens */
+        width: 90%; /* Adjust width for smaller screens */
+    }
+}
+
+.project-image {
+    flex: 1;
+    background-color: #25D366;
+    height: 300px; /* Adjust the height as needed */
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px 0 0 8px; /* Rounded corners on the left */
+}
+
+.project-description {
+    flex: 1;
+    padding: 20px;
+    background-color: #fff; /* White background for description */
+    border-radius: 0 8px 8px 0; /* Rounded corners on the right */
+    box-shadow: 0 4px 18px rgba(255, 204, 0, 0.7); /* Yellow box shadow */
+    position: relative; /* Position relative for absolute positioning of the button */
+    margin-left: -10%;
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center children horizontally */
+    justify-content: center; /* Center children vertically */
+    text-align: center; /* Center text within the container */
+}
+
+.view-more {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #ffcc00; /* Yellow background for the button */
+    color: #fff; /* White text color */
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Box shadow for button */
+}
+
+.view-more:hover {
+    background-color: #e6b800; /* Slightly darker yellow on hover */
+}
+
+.project-description h3 {
+    margin-top: 0;
+    color: #ffcc00; /* Golden color for headings */
+    text-align: center; /* Center the heading text */
+}
+
+.project-description p {
+    color: #333; /* Dark text color for description */
+    text-align: center; /* Center the paragraph text */
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    .project-item {
+        flex-direction: column; /* Stack image and description vertically */
+        margin: 20px; /* Adjust margin for smaller screens */
+        width: 90%; /* Adjust width for smaller screens */
+    }
+
+    .project-image {
+        height: 200px; /* Adjust height for smaller screens */
+        width: 100%; /* Make image full width in column layout */
+        border-radius: 8px 8px 0 0; /* Rounded corners on top */
+    }
+
+    .project-description {
+        width: 100%; /* Make description full width in column layout */
+        border-radius: 0 0 8px 8px; /* Rounded corners on bottom */
+    }
+}
+
+
+.project-description p {
+    color: #333; /* Dark text color for description */
+    text-align: center; /* Center the paragraph text */
+}
+.projects-section h2 {
+    text-align: center; /* Center the heading text */
+    color: #ffcc00; /* Golden color for the heading */
+    margin-bottom: 40px; /* Space below the heading */
+    position: relative; /* Position relative for pseudo-elements */
+    font-size: 2rem; /* Larger font size for emphasis */
+}
+
+.projects-section h2::before, 
+.projects-section h2::after {
+    content: '';
+    position: absolute;
+    width: 40%;
+    height: 2px;
+    background-color: #fff; /* White color for lines */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.projects-section h2::before {
+    left: 0;
+}
+
+.projects-section h2::after {
+    right: 0;
+}
+
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    .project-item {
+        flex-direction: column; /* Stack image and description vertically */
+        margin: 20px; /* Adjust margin for smaller screens */
+        width: 90%; /* Adjust width for smaller screens */
+    }
+
+    .project-image {
+        height: 200px; /* Adjust height for smaller screens */
+        width: 100%; /* Make image full width in column layout */
+        border-radius: 8px 8px 0 0; /* Rounded corners on top */
+    }
+
+    .project-description {
+        width: 100%; /* Make description full width in column layout */
+        border-radius: 0 0 8px 8px; /* Rounded corners on bottom */
+    }
+}
+
+
+
+
+/*      -------------------------        EDUCATION----------------------- */
+.education-section {
+    padding: 40px 20px;
+ background-color: black;
+}
+
+.education-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #bdb8b827; /* White background for container */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow for the container */
+}
+.education-section h2 {
+    text-align: center;
+    color: #ffcc00; /* Golden color for headings */
+    margin-bottom: 20px;
+    font-size: 2rem; /* Larger font size for emphasis */
+    position: relative; /* Required for absolute positioning of pseudo-elements */
+}
+
+.education-section h2::before,
+.education-section h2::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 40%;
+    height: 1px;
+    background-color: #fff; /* White color for the lines */
+    transform: translateY(-50%);
+}
+
+.education-section h2::before {
+    left: 0; /* Position line before the heading */
+}
+
+.education-section h2::after {
+    right: 0; /* Position line after the heading */
+}
+
+
+.education-timeline {
+    position: relative;
+    padding: 20px;
+}
+
+.education-item {
+    position: relative;
+    padding: 20px;
+    margin-bottom: 30px;
+    background-color: #222; /* Dark background for education items */
+    color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Box shadow for items */
+}
+
+.education-item:nth-child(odd) {
+    margin-left: 40px; /* Offset odd items to create a staggered effect */
+}
+
+.education-item:nth-child(even) {
+    margin-right: 40px; /* Offset even items to create a staggered effect */
+}
+
+.education-icon {
+    width: 80px; /* Increase the width of the icon */
+    height: 80px; /* Increase the height of the icon */
+    border-radius: 50%;
+    background-color: #ffcc00; /* Golden color for icons */
+    position: absolute;
+    left: -40px; /* Center the icon to the left */
+    top: 50%; /* Center the icon vertically */
+    transform: translateY(-50%); /* Adjust for vertical centering */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #222; /* Dark color for icon text */
+    font-size: 2rem; /* Increase the font size for better visibility */
+    font-weight: bold;
+}
+
+/* For even items, center the icon on the right */
+
+.education-item:nth-child(odd) .education-icon {
+    left: -30px;
+}
+
+.education-item:nth-child(even) .education-icon {
+    right: -30px;
+}
+
+.education-content {
+    margin-left: 80px; /* Space for the icon */
+}
+
+.education-content h3 {
+    margin-top: 0;
+    color: #ffcc00; /* Golden color for institution names */
+    font-size: 1.5rem; /* Slightly larger font size for emphasis */
+}
+
+.education-content p {
+    margin: 5px 0;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    .education-timeline {
+        padding: 10px;
+    }
+
+    .education-item {
+        margin: 10px 0;
+    }
+
+    .education-icon {
+        left: 10px;
+        right: auto;
+    }
+
+    .education-content {
+        margin-left: 70px; /* Adjust for smaller screens */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.main-background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 40px 20px;
+    background: linear-gradient(to bottom right, yellow, black, black, #000000 60%, #000000 39%, black, yellow); /* Subtle yellow in top left and bottom right */
+    background-size: cover;
+}
+
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Box shadow for the contact container */
+    width: 95%;
+    max-width: 1000px;
+}
+
+.contact-info, .contact-form {
+    width: 100%;
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 8px;
+    flex: 1; /* Ensure both divs take up equal space */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Box shadow for content divs */
+}
+
+.contact-info {
+    background-color: #000; /* Set background color to black for contact info */
+}
+
+.contact-info h2, .contact-form h2 {
+    margin-bottom: 20px;
+    color: #ffcc00; /* Golden color for headings */
+    border-bottom: 2px solid white; /* White underline */
+    padding-bottom: 10px; /* Space between text and underline */
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    color: white; /* Set text color to white */
+    width: 100%; /* Ensure the item takes full width */
+    padding: 10px 0; /* Add vertical padding */
+    justify-content: flex-start; /* Align items to the start */
+}
+
+.info-item div {
+    display: flex;
+    align-items: center;
+    margin-right: 10px; /* Space between icon and text */
+}
+
+.info-item p {
+    margin: 0; /* Remove margin for better alignment */
+}
+
+.info-item .logo-placeholder {
+    width: 30px;
+    height: 30px;
+    background-color: #555; /* Placeholder color */
+    border-radius: 5px;
+}
+
+.social-media {
+    margin-top: 20px;
+}
+
+.social-media h3 {
+    margin-bottom: 10px;
+    color: #ffcc00; /* Golden color for headings */
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    background-color: #555; /* Placeholder color */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.social-icon.linkedin {
+    background-color: #0077b5; /* LinkedIn color */
+}
+
+.social-icon.github {
+    background-color: #333; /* GitHub color */
+}
+
+.social-icon.gmail {
+    background-color: #d14836; /* Gmail color */
+}
+
+.social-icon.instagram {
+    background-color: #e4405f; /* Instagram color */
+}
+
+.social-icon.facebook {
+    background-color: #1877f2; /* Facebook color */
+}
+
+.social-icon.telegram {
+    background-color: #0088cc; /* Telegram color */
+}
+
+.social-icon.whatsapp {
+    background-color: #25D366; /* WhatsApp color */
+}
+
+.social-icon::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.social-icon.linkedin::before {
+    background-image: url('path/to/linkedin-logo.png'); /* Replace with LinkedIn logo */
+}
+
+.social-icon.github::before {
+    background-image: url('path/to/github-logo.png'); /* Replace with GitHub logo */
+}
+
+.social-icon.gmail::before {
+    background-image: url('path/to/gmail-logo.png'); /* Replace with Gmail logo */
+}
+
+.social-icon.instagram::before {
+    background-image: url('path/to/instagram-logo.png'); /* Replace with Instagram logo */
+}
+
+.social-icon.facebook::before {
+    background-image: url('path/to/facebook-logo.png'); /* Replace with Facebook logo */
+}
+
+.social-icon.telegram::before {
+    background-image: url('path/to/telegram-logo.png'); /* Replace with Telegram logo */
+}
+
+.social-icon.whatsapp::before {
+    background-image: url('path/to/whatsapp-logo.png'); /* Replace with WhatsApp logo */
+}
+
+.contact-form {
+    background-color: #706d6d48; /* Dark grey background for the contact form */
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.contact-form label {
+    margin-top: 10px;
+    color: #fffef8; /* Light golden color for labels */
+}
+.contact-form input {
+    margin-top: 5px;
+    padding: 10px;
+    border: 1px solid #ffcc00; /* Yellow border color */
+    border-radius: 5px;
+    width: 90%; /* Decreased width from 100% to 90% */
+    max-width: 400px; /* Optional: Set a max-width */
+    background-color: #222; /* Dark background color for inputs */
+    color: white; /* Text color for inputs */
+    height: 20%; /* Decreased height for input fields */
+}
+
+.contact-form textarea {
+  
+     margin-top: 5px;
+    padding: 10px;
+    border: 1px solid #ffcc00; /* Yellow border color */
+    border-radius: 5px;
+    width: 90%; /* Decreased width from 100% to 90% */
+    max-width: 400px; /* Optional: Set a max-width */
+    background-color: #222; /* Dark background color for inputs */
+    color: white; /* Text color for inputs */
+    height: 20%; /* Decreased height for input fields */
+}
+
+.contact-form button {
+    margin-top: 20px;
+    background-color: #ffcc00; /* Yellow background for button */
+    color: #faf1f1; /* Light text color for button */
+    border: none;
+    font-weight: bolder;
+    font-size: large;
+    height: 30%; /* Set height for button to match input fields */
+    width: 92%; /* Decreased width from 100% to 92% */
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.contact-form button:hover {
+    background-color: #e6b800; /* Slightly darker yellow on hover */
+}
+
+@media (min-width: 600px) {
+    .contact-container {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 40px;
+    }
+    .contact-info, .contact-form {
+        width: 48%;
+        height: 500px; /* Set a fixed height for both divs */
+    }
+}
+
+
+/* -------   footer -----------------*/
+
+
+
+.footer {
+    background-color: #000; /* Black background for the footer */
+    color: white; /* White text color */
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer-container {
+    max-width: 1200px; /* Wider container */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center;
+    gap: 20px; /* Space between sections */
+}
+
+.footer-social-icons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px; /* Space between icons */
+    margin-bottom: 20px; /* Space below icons */
+}
+
+.footer-social-icon {
+    width: 50px; /* Icon size */
+    height: 50px; /* Icon size */
+    background-color: #555; /* Placeholder color */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.footer-social-icon.linkedin {
+    background-color: #0077b5; /* LinkedIn color */
+}
+
+.footer-social-icon.github {
+    background-color: #333; /* GitHub color */
+}
+
+.footer-social-icon.gmail {
+    background-color: #d14836; /* Gmail color */
+}
+
+.footer-social-icon.instagram {
+    background-color: #e4405f; /* Instagram color */
+}
+
+.footer-social-icon::before {
+    content: '';
+    display: block;
+    width: 24px; /* Icon size */
+    height: 24px; /* Icon size */
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.footer-social-icon.linkedin::before {
+    background-image: url('path/to/linkedin-logo.png'); /* Replace with LinkedIn logo */
+}
+
+.footer-social-icon.github::before {
+    background-image: url('path/to/github-logo.png'); /* Replace with GitHub logo */
+}
+
+.footer-social-icon.gmail::before {
+    background-image: url('path/to/gmail-logo.png'); /* Replace with Gmail logo */
+}
+
+.footer-social-icon.instagram::before {
+    background-image: url('path/to/instagram-logo.png'); /* Replace with Instagram logo */
+}
+
+.footer p {
+    margin: 0;
+    font-size: 16px;
+}
