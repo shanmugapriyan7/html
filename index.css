@@ -1,7 +1,7 @@
 body {
     z-index: -1;
         font-family: Arial, sans-serif;
-      background-color: rgba(0, 0, 0, 0.759);
+      background-color: rgba(0, 0, 0, 0.984);
  
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -11,7 +11,7 @@ body {
 
 /* General styling for navbar */
 .navbar {
-    background: rgba(0, 0, 0, 0.6); /* Black with transparency */
+    background: rgba(255, 247, 1, 0.526); /* Black with transparency */
     backdrop-filter: blur(10px); /* Blur effect */
     color: white;
     padding: 20px 20px; /* Increased padding for more height */
@@ -34,7 +34,7 @@ body {
 }
 
 .navbar-brand {
-    color: #ffcc00; /* Golden color for brand */
+    color: #725f13; /* Golden color for brand */
     font-size: 24px;
     text-decoration: none;
 }
@@ -485,14 +485,244 @@ background-color: rgba(9, 3, 3, 0.76);
             }
 
 
+/* ------------------ name section -----------------*/
+/* Name Section Styles */
+.main-name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin: 80px 20px 20px 20px; /* Adjust top margin for navbar overlap */
+    background-color: #a9a9a92e;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+.name-section {
+    display: flex;
+    color: gold;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 20px;
+    margin: 5% 2% 5% 1%; /* Increased top margin for navbar overlap */
+   
+    border-radius: 10px;
 
+   
+    box-sizing: border-box;
+}
 
+.profile-image, .name-details {
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+    margin: 0 20px; /* Add space between the two child divs */
+}
 
+.profile-image {
+    display: flex;
+    justify-content: center; /* Center the image */
+    align-items: center; /* Center the image vertically */
+    
+}
 
+.profile-image img {
+    border-radius: 50%;
+    box-shadow: 0 0 50px gold;
+    border: 5px solid white;
 
+    max-width: 300px;
+    height: auto;
+    width: 100%; /* Ensure responsiveness */
+    transition: transform 0.3s ease-in-out; /* Add transition for image zoom effect */
+}
 
+.name-details {
+    text-align: left; /* Align text to the left */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center vertically */
+    align-items: flex-start; /* Align text to the left */
+    margin-left: 40px; /* Increase left margin */
+}
 
+.name-details h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    transition: color 0.3s ease; /* Add transition for text color change */
+}
 
+.name-details p {
+    font-size: 1.2em;
+    margin: 10px 0;
+    transition: opacity 0.3s ease; /* Add transition for opacity change */
+}
+
+/* Hover effects for profile image */
+.profile-image img:hover {
+    transform: scale(1.05); /* Zoom effect on hover */
+}
+
+/* Hover effects for name details */
+.name-details h1:hover {
+    color: #ffcc00; /* Change color on hover */
+}
+
+.name-details p:hover {
+    opacity: 0.8; /* Slight fade on hover */
+}
+
+/* Responsive styling */
+@media (max-width: 992px) {
+    .name-section {
+        flex-direction: column;
+        align-items: center;
+        margin: 60px 20px 20px 20px; /* Adjust top margin */
+    }
+
+    .profile-image, .name-details {
+        width: 100%;
+        padding: 10px;
+        margin: 0; /* Remove side margins on smaller screens */
+    }
+
+    .profile-image img {
+        max-width: 350px; /* Increase max-width for smaller screens */
+    }
+
+    .name-details {
+        margin-left: 20px; /* Adjust left margin for smaller screens */
+    }
+
+    .name-details h1 {
+        font-size: 2em;
+    }
+
+    .name-details p {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 576px) {
+    .name-section {
+        padding: 10px;
+        margin: 40px 10px 10px 10px; /* Further adjust top margin */
+    }
+
+    .profile-image img {
+        max-width: 250px; /* Increase max-width for even smaller screens */
+    }
+
+    .name-details {
+        margin-left: 10px; /* Further adjust left margin for smaller screens */
+    }
+
+    .name-details h1 {
+        font-size: 1.8em;
+    }
+
+    .name-details p {
+        font-size: 0.9em;
+    }
+}
+/* Additional styles for highlighted name */
+/* Additional styles for highlighted name */
+.name-highlight {
+    color: #ffcc00; /* Gold color for the name */
+}
+
+/* About section styling */
+.about-text {
+    margin: 20px 0; /* Add space above and below the text */
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+/* Background section styling */
+.background-section {
+    background-color: rgba(0, 0, 0, 0.1); /* Light background color for the section */
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px; /* Space above the background section */
+    text-align: center;
+}
+
+.cv-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ffcc00; /* Yellow background for the button */
+    color: #fff; /* White text color */
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 20px; /* Space above the button */
+    transition: background-color 0.3s ease;
+}
+
+.cv-button:hover {
+    background-color: #e6b800; /* Darker yellow on hover */
+}
+
+/* Ensure responsive styles remain in place */
+@media (max-width: 992px) {
+    .main-name {
+        flex-direction: column;
+        align-items: center;
+        margin: 60px 20px 20px 20px; /* Adjust top margin */
+    }
+
+    .name-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-image, .name-details {
+        width: 100%;
+        padding: 10px;
+        margin: 0; /* Remove side margins on smaller screens */
+    }
+
+    .profile-image img {
+        max-width: 350px; /* Increase max-width for smaller screens */
+    }
+
+    .name-details {
+        margin-left: 0; /* Remove left margin for smaller screens */
+    }
+
+    .name-details h1 {
+        font-size: 2em;
+    }
+
+    .name-details p {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 576px) {
+    .main-name {
+        padding: 10px;
+        margin: 40px 10px 10px 10px; /* Further adjust top margin */
+    }
+
+    .profile-image img {
+        max-width: 250px; /* Increase max-width for even smaller screens */
+    }
+
+    .name-details {
+        margin-left: 0; /* Remove left margin for smaller screens */
+    }
+
+    .name-details h1 {
+        font-size: 1.8em;
+    }
+
+    .name-details p {
+        font-size: 0.9em;
+    }
+}
 
 
 
