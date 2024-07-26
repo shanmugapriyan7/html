@@ -2,16 +2,17 @@ body {
     z-index: -1;
         font-family: Arial, sans-serif;
       background-color: rgba(0, 0, 0, 0.984);
- 
+ background-image: url("Images/download.jpeg");
     background-repeat: no-repeat;
     background-attachment: fixed;
+    background-size: cover;
     }
   
     
 
 /* General styling for navbar */
 .navbar {
-    background: rgba(204, 201, 2, 0.59); /* Black with transparency */
+    background: rgba(0, 0, 0, 0.563); /* Black with transparency */
     backdrop-filter: blur(10px); /* Blur effect */
     color: white;
     padding: 20px 20px; /* Increased padding for more height */
@@ -19,9 +20,10 @@ body {
     width: 100%;
     top: 0;
     left: 0;
+    border-radius: ;
     z-index: 1000; /* Ensure navbar is above other content */
     transition: background-color 0.3s, box-shadow 0.3s;
-    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.5); /* Box shadow for navbar */
+    box-shadow: 0 4px 18px rgba(119, 115, 115, 0.5); /* Box shadow for navbar */
 }
 
 .navbar-container {
@@ -493,10 +495,10 @@ background-color: rgba(9, 3, 3, 0.76);
     align-items: center;
     padding: 20px;
     margin: 80px 20px 20px 20px; /* Adjust top margin for navbar overlap */
-    background-color: #a9a9a92e;
+   
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    box-sizing: border-box;
+ 
+   
 }
 .name-section {
     display: flex;
@@ -510,13 +512,13 @@ background-color: rgba(9, 3, 3, 0.76);
     border-radius: 10px;
 
    
-    box-sizing: border-box;
+    
 }
 
 .profile-image, .name-details {
     flex: 1;
     padding: 20px;
-    box-sizing: border-box;
+  
     margin: 0 20px; /* Add space between the two child divs */
 }
 
